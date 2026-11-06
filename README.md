@@ -15,7 +15,7 @@ A modern, responsive event management website where users can explore upcoming e
 
 | Light mode (desktop) | Dark mode (desktop) | Mobile |
 |---|---|---|
-| ![Light](screenshots/light.png) | ![Dark](screenshots/dark.png) | ![Mobile](screenshots/mobile.png) |
+| ![Light](screenshots/desktop_light.png) | ![Dark](screenshots/desktop_dark.png) | ![Mobile](screenshots/mobile_dark.jpeg) |
 
 ## Problem Statement
 
