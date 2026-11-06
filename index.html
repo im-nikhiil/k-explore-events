@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="K Explore – discover and register for upcoming events.">
+<title>K Explore – Event Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#events">Skip to events</a>
+<header class="nav">
+  <a href="#" class="logo">K Explore</a>
+  <nav aria-label="Main">
+    <a href="#events">Events</a>
+    <a href="#mine">My registrations <span id="regCount" class="badge">0</span></a>
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Find the events worth showing up for.</h1>
+      <p>Hackathons, concerts, workshops and meetups across the city. Browse, filter and register in under a minute.</p>
+      <a class="btn" href="#events">Browse events</a>
+    </div>
+    <div class="next" aria-live="polite">
+      <p class="next-label">Next event starts in</p>
+      <div id="heroCount" class="count"></div>
+      <p id="heroName" class="next-name"></p>
+    </div>
+  </section>
+
+  <section id="events" class="wrap">
+    <h2>Upcoming &amp; featured events</h2>
+    <div class="tools">
+      <input id="search" type="search" placeholder="Search by name, venue or keyword" aria-label="Search events">
+      <div id="chips" class="chips" role="group" aria-label="Filter by category"></div>
+    </div>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>No events match your search. Try another keyword or choose All.</p>
+  </section>
+
+  <section id="mine" class="wrap">
+    <h2>My registrations</h2>
+    <ul id="mineList" class="mine"></ul>
+    <p id="mineEmpty" class="empty">You haven't registered for any events yet.</p>
+  </section>
+</main>
+
+<footer class="foot">© 2026 K Explore · Built with HTML, CSS and JavaScript</footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button id="close" class="icon-btn close" aria-label="Close">✕</button>
+    <img id="mImg" alt="">
+    <div class="sheet-body">
+      <h3 id="mTitle"></h3>
+      <p id="mMeta" class="meta"></p>
+      <p id="mDesc"></p>
+      <div id="mCount" class="count small"></div>
+      <form id="form" novalidate>
+        <h4>Register for this event</h4>
+        <label>Full name<input id="name" type="text" autocomplete="name"><small class="err"></small></label>
+        <label>Email address<input id="email" type="email" autocomplete="email"><small class="err"></small></label>
+        <label>Phone number<input id="phone" type="tel" autocomplete="tel" placeholder="10-digit number"><small class="err"></small></label>
+        <label>Selected event<select id="eventSel"></select><small class="err"></small></label>
+        <button class="btn" type="submit">Confirm registration</button>
+      </form>
+      <div id="done" class="done" hidden>
+        <div class="tick">✓</div>
+        <h4>You're registered!</h4>
+        <p id="doneMsg"></p>
+        <button id="doneBtn" class="btn">Back to events</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
